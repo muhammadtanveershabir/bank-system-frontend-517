@@ -5,7 +5,9 @@ import {
   Users, UserPlus, Shield, PlusCircle, Settings, ClipboardList
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:5000/api'
+  : 'https://backend-nine-phi-99.vercel.app/api';
 
 export default function App() {
   // Navigation & Session State
